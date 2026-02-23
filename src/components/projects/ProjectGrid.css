@@ -1,0 +1,214 @@
+/* ====== PROJECT GRID SECTION ====== */
+.project-grid-section {
+  padding: 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pg-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.pg-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pg-title {
+  font-size: 22px;
+  color: var(--cream);
+}
+
+.pg-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fog);
+  letter-spacing: 0.06em;
+}
+
+.pg-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search */
+.pg-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: var(--black-3);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  color: var(--fog);
+  transition: border-color 0.2s;
+}
+
+.pg-search:focus-within {
+  border-color: var(--amber);
+}
+
+.pg-search-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  width: 160px;
+}
+
+.pg-search-input::placeholder { color: var(--ash); }
+
+/* View Toggle */
+.pg-view-toggle {
+  display: flex;
+  gap: 4px;
+}
+
+.pg-view-toggle .btn-icon.active {
+  background: var(--amber-dim);
+  border-color: var(--amber);
+  color: var(--amber-bright);
+}
+
+/* Filter Tabs */
+.pg-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.pg-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: var(--black-3);
+  border: 1px solid var(--glass-border);
+  color: var(--smoke);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pg-filter-btn:hover {
+  background: var(--carbon);
+  color: var(--cream);
+  border-color: var(--ash);
+}
+
+.pg-filter-btn.active {
+  background: color-mix(in srgb, var(--fc, var(--amber)) 12%, transparent);
+  border-color: color-mix(in srgb, var(--fc, var(--amber)) 40%, transparent);
+  color: var(--fc, var(--amber-bright));
+}
+
+.pg-filter-count {
+  background: var(--cream-dim);
+  border-radius: 100px;
+  padding: 1px 7px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--fog);
+}
+
+/* Divider */
+.pg-divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--amber-dim), var(--glass-border), transparent);
+  margin-bottom: 36px;
+}
+
+/* Section Label */
+.pg-section {
+  margin-bottom: 48px;
+}
+
+.pg-section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fog);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pg-section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+/* Featured Row — larger cards */
+.pg-featured-row.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.pg-featured-row.grid .project-folder {
+  margin-top: 28px;
+}
+
+/* Regular Grid */
+.pg-grid.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.pg-grid.grid .project-folder {
+  margin-top: 28px;
+}
+
+/* List views */
+.pg-featured-row.list,
+.pg-grid.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Empty state */
+.pg-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 20px;
+  color: var(--fog);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.pg-empty-emoji { font-size: 48px; }
+
+@media (max-width: 768px) {
+  .project-grid-section { padding: 40px 20px; }
+  .pg-featured-row.grid,
+  .pg-grid.grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .pg-search-input { width: 120px; }
+}
+
+@media (max-width: 480px) {
+  .pg-featured-row.grid,
+  .pg-grid.grid { grid-template-columns: 1fr; }
+}
