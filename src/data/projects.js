@@ -23,6 +23,9 @@ const runnerFiles = import.meta.glob('../assets/runner/*.{png,jpg,jpeg,webp,mp4}
 const therianFiles = import.meta.glob('../assets/therian/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
 const henryFiles = import.meta.glob('../assets/Henry/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
 const shadowcourtFiles = import.meta.glob('../assets/shadowcourt/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
+const gizmoFiles = import.meta.glob('../assets/gizmo/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
+const nedFiles = import.meta.glob('../assets/ned/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
+const sacksboyFiles = import.meta.glob('../assets/sacksboy/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
 
 const genMedia = (files, prefix) => {
   return Object.entries(files).map(([path, url], i) => {
@@ -147,6 +150,51 @@ export const PROJECTS = [
     articles: [],
     websiteUrl: null,
     featured: true,
+    year: 2026,
+  },
+  {
+    id: 'gizmo',
+    title: 'Gizmo',
+    subtitle: 'Gizmo Collection',
+    type: 'art',
+    tags: ['Art', 'Illustration'],
+    description: 'A collection of visual art and illustrations for Gizmo.',
+    color: '#34d399',
+    accentColor: '#10b981',
+    media: genMedia(gizmoFiles, 'gizmo'),
+    articles: [],
+    websiteUrl: null,
+    featured: true,
+    year: 2026,
+  },
+  {
+    id: 'ned',
+    title: 'Ned',
+    subtitle: 'Ned Artwork',
+    type: 'art',
+    tags: ['Art', 'Design'],
+    description: 'Explorations and design work for Ned.',
+    color: '#f87171',
+    accentColor: '#ef4444',
+    media: genMedia(nedFiles, 'ned'),
+    articles: [],
+    websiteUrl: null,
+    featured: false,
+    year: 2026,
+  },
+  {
+    id: 'sacksboy',
+    title: 'Sacksboy',
+    subtitle: 'Sacksboy Gallery',
+    type: 'art',
+    tags: ['Art', 'Character'],
+    description: 'Character design and illustrations of Sacksboy.',
+    color: '#60a5fa',
+    accentColor: '#3b82f6',
+    media: genMedia(sacksboyFiles, 'sacksboy'),
+    articles: [],
+    websiteUrl: null,
+    featured: false,
     year: 2026,
   }
 ];
