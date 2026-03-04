@@ -26,6 +26,8 @@ const shadowcourtFiles = import.meta.glob('../assets/shadowcourt/*.{png,jpg,jpeg
 const gizmoFiles = import.meta.glob('../assets/gizmo/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
 const nedFiles = import.meta.glob('../assets/ned/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
 const sacksboyFiles = import.meta.glob('../assets/sacksboy/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
+const warbrosFiles = import.meta.glob('../assets/warbros/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
+const warjackFiles = import.meta.glob('../assets/warjack/*.{png,jpg,jpeg,webp,mp4}', { eager: true, import: 'default' });
 
 const genMedia = (files, prefix) => {
   return Object.entries(files).map(([path, url], i) => {
@@ -192,6 +194,36 @@ export const PROJECTS = [
     color: '#60a5fa',
     accentColor: '#3b82f6',
     media: genMedia(sacksboyFiles, 'sacksboy'),
+    articles: [],
+    websiteUrl: null,
+    featured: false,
+    year: 2026,
+  },
+  {
+    id: 'warbros',
+    title: 'Warbros',
+    subtitle: 'Warbros Gallery',
+    type: 'art',
+    tags: ['Art', 'Design'],
+    description: 'A collection of visual art and illustrations for Warbros.',
+    color: '#fbbf24',
+    accentColor: '#d97706',
+    media: genMedia(warbrosFiles, 'warbros'),
+    articles: [],
+    websiteUrl: 'https://warbros.xyz',
+    featured: false,
+    year: 2026,
+  },
+  {
+    id: 'warjack',
+    title: 'Warjack',
+    subtitle: 'Warjack Artwork',
+    type: 'art',
+    tags: ['Art', 'Design'],
+    description: 'Explorations and design work for Warjack.',
+    color: '#9ca3af',
+    accentColor: '#4b5563',
+    media: genMedia(warjackFiles, 'warjack'),
     articles: [],
     websiteUrl: null,
     featured: false,
